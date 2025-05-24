@@ -115,5 +115,22 @@ To run them in Android Studio:
 - Open LanguageCardsScreenTest.kt
 - Right-click the class or method
 - Select Run
+## CI Test Workflow
+This project uses GitHub Actions to automatically run Jetpack Compose UI tests.
 
+🔄 When does it run?
+✅ On every push to main
+
+✅ On every pull request to main
+
+✅ ✅ Can also be triggered manually via the GitHub UI
+
+▶️ How to run tests manually
+Go to the Actions tab in the GitHub repository.
+
+Select “Android UI Tests” from the workflow list.
+
+Click “Run workflow” in the top-right corner.
+
+Confirm to run — no need to push or open a PR.
 
