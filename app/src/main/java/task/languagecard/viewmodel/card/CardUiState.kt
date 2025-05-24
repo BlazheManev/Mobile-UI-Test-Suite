@@ -9,3 +9,4 @@ data class CardUiState(
     val isFirstLanguage: Boolean = true,
     val cards: List<UiCard> = emptyList(),
 )
+
