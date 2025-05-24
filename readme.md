@@ -61,3 +61,59 @@ Then, go to the app’s root directory in the _command line_ tool of Android Stu
 
 Once this command completes, the application will be **installed** on the selected device ready to
 be run.
+
+# 🧪 Automated UI Testing
+
+This project includes a complete **Jetpack Compose UI test suite** to verify the most important app behavior.
+
+## ✅ Covered Scenarios
+
+- ✅ Shows loading spinner when data is loading
+- ✅ Displays correct text on the initial card
+- ✅ Tapping a card flips to the translated side
+- ✅ Swiping through all cards works as expected
+- ✅ `onAppear()` triggers when a card becomes visible
+- ✅ Tapping triggers language toggle
+- ❌ **Intentional failing test** included (see below)
+
+## 🐞 Known Bug (Intentional Test Failure)
+
+The test `bugTest_tapWhileLoadingDoesNothing` is expected to fail.
+
+> It asserts that card text should not be visible while loading, but the card still renders.  
+> This reflects an actual bug with how `isLoading` is implemented in the current UI.
+
+Bug is documented in [`issues.md`](./issues.md)
+
+## 🔁 Swipe Logic (Important)
+
+The app uses:
+
+reverseLayout = true
+This means:
+
+swipeRight() = move forward (next card)
+
+swipeLeft() = move backward
+
+All tests are designed to follow this logic to avoid false test failures.
+his means:
+
+- swipeRight() = move forward (next card)
+- swipeLeft() = move backward
+
+All tests are designed to follow this logic to avoid false test failures.
+
+## 📦 How to Run Tests
+To run all UI tests via the command line:
+
+```
+./gradlew connectedCheck
+```
+To run them in Android Studio:
+
+- Open LanguageCardsScreenTest.kt
+- Right-click the class or method
+- Select Run
+
+
