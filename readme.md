@@ -119,9 +119,9 @@ To run them in Android Studio:
 This project uses GitHub Actions to automatically run Jetpack Compose UI tests.
 
 🔄 When does it run?
-✅ On every push to main
+✅ On every push to master
 
-✅ On every pull request to main
+✅ On every pull request to master
 
 ✅ ✅ Can also be triggered manually via the GitHub UI
 
